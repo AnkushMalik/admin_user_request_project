@@ -1,0 +1,1 @@
+This web app allows users to add others to their professional circle. 

@@ -1,0 +1,12 @@
+<div id="page_wrapper">
+	<p> <a href="/professional_profile" class="button" style="margin:10px;"> Back </a></p>
+<div style="height:30px;"></div>
+		<form action="/users/logout" method="POST">
+			<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+	 		<input type='submit' value='Logout' class="button"> 
+	 		</form>
+<div style="height:30px;"></div>
+
+<h2> > Name : <%= @user.name %> </h2>
+<h4> > Description :<%= @user.description %> </h4>
+</div>

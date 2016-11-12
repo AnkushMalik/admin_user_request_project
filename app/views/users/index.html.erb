@@ -1,0 +1,44 @@
+<div class="kik">
+<div class="header">
+<h2>Slot Project!</h2>
+<form action="/users/login" method="POST" style="padding-top:8px">
+		<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+			<input placeholder=" Email" type="text" name="email" style="height:25px">
+			<input placeholder=" Password" type="password" name="password" style="height:25px">
+		<input class="button" type="submit" value="Login" style="color:white;">
+	</form>
+</div>
+<div id="page_wrapper" class="box" style="">
+	<div id="flash">
+		
+	<% if flash[:notice] %>
+	<div style="border-left:solid 1.5px white;border-right:solid 1.5px white;border-radius:10px;">
+	<% flash[:notice].each do |message| %>
+		<ul style="padding-left:10px;list-style:none;">
+		<li style="padding-top:5px;color:white;"> > <%= message %></li>
+		</ul>
+	<% end %>
+	</div>
+	<% end %>
+
+	<% if flash[:alert] %>
+	<p><%= flash[:alert] %></p>
+	<% end %>
+	</div>
+
+	<div class="login">
+	<h1 style="padding-bottom:15px">Register</h1>
+	<form action="/users/register" method="POST">
+	<span>
+		<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" style="height:25px">
+		<input placeholder="  Name" type="text" name="name" style="height:30px"><br>
+		<input placeholder="  Email" type="text" name="email" style="height:30px"><br>
+		<input placeholder="  Password" type="password" name="password" style="height:30px"><br>
+		<input placeholder="  Confirm Password" type="password" name="password_confirmation" style="height:30px"><br>
+		<input placeholder="  Description" type="text" name="description" style="height:30px"><br>
+	</span>
+		<p><input class="button" type="submit" value="Register" style="margin-top:20px;color:white;"></p>
+	</form>
+	</div>
+</div>
+</div>

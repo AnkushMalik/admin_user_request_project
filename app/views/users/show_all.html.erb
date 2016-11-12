@@ -1,0 +1,27 @@
+<div id="page_wrapper">
+	
+	<h4> Users you may want to Invite for the accessing the slots: </h4>
+
+	<table>
+		<tr>
+			<th> Name </th>
+			<th> Action </th>
+		</tr>
+
+		<tr>
+		
+		<% @users.each do |user| %>
+		<% if @current_user.id != user.id and !@friendships.include? (user) and ! @all_friends.include? (user.id) %>
+		<td> <a href="/users/<%= user.id%>"> <%= user.name %> </a> </td>
+		<td> <a href="/friendships/create/<%= user.id%>">Connect</a></td>
+		<div style="height:10px;"></div>
+		</tr>
+		<%end%>
+		<%end%>
+	</table>
+	<div style="height:30px;"></div>
+	<a href="/professional_profile" class="button"> Back </a>
+
+
+
+</div>

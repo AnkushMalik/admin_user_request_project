@@ -1,0 +1,137 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ *{
+ 	padding: 0;
+ 	margin:0;
+ 	box-sizing: border-box;
+ }
+ .kik{
+ 	position:static;
+ 	top:0;
+
+	min-height:100vh;
+	min-width:100%;
+	background-image: url("cnjava2.png");
+	background-repeat: no-repeat;
+	background-size:cover;
+
+ }
+ .bckimg{
+ 	min-height:100vh;
+	min-width:100%;
+	background-image: url("codezen.png");
+	background-repeat: no-repeat;
+	background-size:cover;
+ }
+ body{
+ 	background-color: #a0a0a0;
+ 	font-family: raleway;
+ }
+ h1,h2,h3,h4,h6,h5{
+ 	font-family: raleway;
+	font-weight: 500;
+	font-size:25px;
+
+
+ }
+ .header{
+ 	color: white;
+ 	min-height: 60px;
+ 	background-color: #dc7238;
+ 	box-shadow: 0px 1px 4px black;
+ 	display: flex;
+ 	margin-bottom: 10px;
+ 	h2{
+ 		padding-top: 14px;
+ 		padding-left: 8px;
+ 		flex:1;
+ 		font-family: 'Lobster', cursive;
+ 		display: inline-block;
+ 	}
+ 	form{
+ 		margin-top: 10px;
+ 		display: inline-block;
+ 		float: right;
+ 	}
+}
+.button {
+	outline: none;
+	background: transparent;
+	border: 1.7px solid black;
+	padding: .5em 1.5em;
+	border-radius: 1.5em;
+	font-weight:bold;
+	&:hover {
+		border: 1px solid #2980B9;
+		color: #2980B9;
+		a {
+			color: #2980B9 !important;
+		}
+	}
+}
+a{
+	color: black;
+}
+#page_wrapper {
+		padding: 3em;
+		#profile_image {
+			width: 300px;
+			float: left;
+			margin-right: 2em;
+			img {
+				width: 100%;
+				border-radius: 0.35em;
+			}
+		}
+		#content {
+			h1 {
+				font-weight: 500;
+			}
+			p {
+				font-size: 1.1em;
+				line-height: 1.75;
+			}
+			a {
+				color: black;
+				font-weight: 700;
+				text-decoration: none;
+			}
+		}
+	}
+.box{
+	display: flex;
+	#flash{
+		padding:10px;
+		max-width:350px;
+		min-width:300px;
+
+		flex: 1;
+	}
+	.login{
+		margin-left: 500px;
+		flex: 3;
+		form{
+			span{
+			input{
+				width: 300px;
+				margin-top: 5px;
+				border-radius: 5px;
+				border-style: none;
+			}
+		}
+		}
+	}
+}

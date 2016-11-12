@@ -1,0 +1,114 @@
+<div class='container'>
+	<div class='header'> 
+		<h2> Welcome, <%= @user.name %>! </h2>
+		<form action="/users" method="POST">
+			<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+	 		<input class="button" type='submit' value='Logout' style="color: white;"> 
+	 	</form>
+	</div>
+	<div id="page_wrapper">
+		<p>
+		<!-- FOR ADMIN TO INVITE OTHER USERS FOR ACCESSING SLOTS :- -->
+	<!-- 	<%if @user.id==2%>
+		 <a href="/users/show" class="button" style="margin-bottom:10px;text-decoration:none;" > All Users </a>
+		<%end%> 
+	-->
+		</p>
+		<div style="height:10px"></div>
+		<% if @user.id==2%>
+				<h4> users Accessing slots right now:- </h4>
+				<% for user in @user_all %>
+					<% for pending in @accept%>
+					 <% if user.id == pending.user_id %>
+					 	<p><a href="/users/<%= user.id%>" style="text-decoration:none;"><%= user.name %></a></p>
+						<div style="height:10px"></div>
+
+					 	<a href="/friendships/destroy/<%= pending.user_id%>" class="button" style="text-decoration:none;">Remove</a></p>
+					 	<%end%>
+					 <%end%>
+				<%end%> 
+				<div style="height:30px"></div>
+			<h4> The following people have asked you for accessing the slots</h4>
+			<%for pending in @invites%>
+			<%if pending.user.id!=nil%>
+				<div style="height:15px"></div>
+				  <% for user in @user_all%>
+					<% for pending in @invites%>
+					 <% if user.id == pending.user_id %>
+					 	<p style="font-size:20px;padding-left:15px;"> <a href="/users/<%= user.id%>" style="text-decoration:none;color:black"> > <%= user.name%> for the slot number : <%= $sid%></a></p>
+						<div style="height:10px"></div>
+					 	<%= link_to "Accept",accept_friendships_path(:id=>pending[:id],:user_id=>pending[:user_id],:sac=>$sid),class: "button"%>
+					 	<%= link_to "Ignore",ignore_friendships_path(:id=>pending[:id]),class: "button"%>
+					 	<%end%>
+					 <%end%>
+					 <%end%>
+				<%end%> 
+				<%end%> 
+		<%else%>
+			<%chk=Friendship.where(friend_id:2,status: "Accepted") %>
+			<%a=chk.pluck(:user_id)%>
+			<%count=0%>
+			<%a.each do |u|%>
+				<%if u==@user.id%>
+				 <%count=count+1%>
+				<%end%>
+			<%end%>
+			<%if count!=0%>
+				<%if $sac=='1'%>
+				<%= link_to "slot_1",slot1_path, class: "button"%><br><div style="height:20px;"></div>
+				<%= link_to "slot_2","/professional_profile",data: {confirm: "Access Denied"},class: "button"%>
+				<%elsif $sac=='2'%>
+				<%= link_to "slot_1","/professional_profile",data: {confirm: "Access Denied !"},class: "button"%>
+				<%= link_to "slot_2",slot2_path, class: "button"%><div style="height:50px;"></div>
+				<%end%>
+				<% for user in @user_all %>
+				  <% for pending in @accept%>
+					 <% if user.id == pending.user_id %>
+					  <h4> Admin has granted your request for accessing the slot </h4>
+					  <p><a href="/users/<%= user.id%>" style="text-decoration:none;"><%= user.name %></a></p>
+						<div style="height:10px"></div>
+					  <a href="/friendships/destroy/<%= pending.user_id%>", class="button" style="text-decoration:none;">Remove</a></p>
+					 <%end%>
+					<%end%>
+				<%end%> 
+			<%else%>
+				<%= link_to "slot_1","/professional_profile",data: {confirm: "Access Denied !"},class: "button"%>
+				<br>
+				<div style="height:20px"></div>
+				<%= link_to "send request for slot",create_friendships_path(:user_id=>2,:sid=>1),class: "button" %>
+				<div style="height:40px"></div>
+				<%= link_to "slot_2","/professional_profile",data: {confirm: "Access Denied"},class: "button"%>
+				<br><div style="height:20px"></div>
+				<%= link_to "send request for slot",create_friendships_path(:user_id=>2,:sid=>2), class: "button"%>
+				<% for user in @user_all %>
+					<% for pending in @accept%>
+					 <% if user.id == pending.user_id %>
+					 <h4> Admin has granted your request for accessing the slot </h4>
+					 	<p><a href="/users/<%= user.id%>" class="button" style="text-decoration:none;"><%= user.name %></a></p>
+					 	<a href="/friendships/destroy/<%= pending.user_id%>" style="text-decoration:none;" class="button">Remove</a></p>
+					 <%end%>
+					<%end%>
+				<%end%> 
+			<%end%>
+			<%for pending in @invites%>
+			<%if pending.user.id!=nil%>
+				<div style="height:15px"></div>
+				  <% for user in @user_all%>
+					<% for pending in @invites%>
+					 <% if user.id == pending.user_id %>
+					 	<p style="font-size:20px;padding-left:15px;"> <a href="/users/<%= user.id%>" style="text-decoration:none;color:#2980B9"> > <%= user.name %></a></p>
+						<div style="height:10px"></div>
+					 	<a href="/friendships/accept/<%= pending.id%>/<%= pending.user_id%>" class="button" style="text-decoration:none;">Accept</a>
+					 	<a href="/friendships/ignore/<%= pending.id%>" class="button" style="text-decoration:none;">Ignore</a></td>
+					 	<%end%>
+					 <%end%>
+					 <%end%>
+				<%end%> 
+				<%end%> 
+
+		<%end%>
+		
+
+	</div>
+	
+</div>
