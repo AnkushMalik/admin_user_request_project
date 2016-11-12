@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 gem 'byebug'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
-# Use postgresql as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -35,6 +33,13 @@ group :test, :development do
 end
 group :test do
   gem 'capybara'
+end
+group :development do
+	gem 'sqlite3'
+end
+group :production do
+	gem 'pg'
+	gem 'rails_12factor'
 end
 # Use unicorn as the app server
 # gem 'unicorn'

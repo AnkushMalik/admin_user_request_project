@@ -76223,3 +76223,180 @@ Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-11-12 04:40:46 +0530
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-11-12 04:40:46 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-12 09:37:19 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 354ms (Views: 326.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-12 09:37:20 +0530
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 75ms (Views: 74.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/friend_requests.css?body=1" for 127.0.0.1 at 2016-11-12 09:37:20 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-11-12 09:37:20 +0530
+
+
+Started GET "/assets/friendships.css?body=1" for 127.0.0.1 at 2016-11-12 09:37:20 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-11-12 09:37:20 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-11-12 09:37:20 +0530
+
+
+Started GET "/assets/slots.css?body=1" for 127.0.0.1 at 2016-11-12 09:37:20 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-11-12 09:37:20 +0530
+
+
+Started GET "/assets/friend_requests.js?body=1" for 127.0.0.1 at 2016-11-12 09:37:20 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-11-12 09:37:20 +0530
+
+
+Started GET "/assets/friendships.js?body=1" for 127.0.0.1 at 2016-11-12 09:37:21 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-11-12 09:37:21 +0530
+
+
+Started GET "/assets/slots.js?body=1" for 127.0.0.1 at 2016-11-12 09:37:21 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-11-12 09:37:21 +0530
+
+
+Started GET "/assets/cnjava2.png" for 127.0.0.1 at 2016-11-12 09:37:21 +0530
+
+
+Started GET "/assets/codezen.png" for 127.0.0.1 at 2016-11-12 09:37:21 +0530
+
+
+Started POST "/users/login" for 127.0.0.1 at 2016-11-12 09:37:29 +0530
+Processing by UsersController#login as HTML
+  Parameters: {"authenticity_token"=>"RCxzSCfNtTJ+rNILohphByzQDF8Yku73RuQtqUao0uw=", "email"=>"user@example.com", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'user@example.com' LIMIT 1
+Redirected to http://localhost:3000/professional_profile
+Completed 302 Found in 260ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/professional_profile" for 127.0.0.1 at 2016-11-12 09:37:30 +0530
+Processing by FriendshipsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.2ms)[0m  SELECT "friendships"."user_id" FROM "friendships"  WHERE "friendships"."friend_id" = 2 AND "friendships"."status" = 'Accepted'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFriendship Load (0.2ms)[0m  SELECT "friendships".* FROM "friendships"  WHERE "friendships"."friend_id" = 4 AND "friendships"."status" = 'Accepted'
+  [1m[36mFriendship Load (0.1ms)[0m  [1mSELECT "friendships".* FROM "friendships"  WHERE "friendships"."friend_id" = 4 AND "friendships"."status" = 'Pending'[0m
+  Rendered friendships/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 216ms (Views: 103.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/friend_requests.css?body=1" for 127.0.0.1 at 2016-11-12 09:37:30 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-11-12 09:37:30 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-11-12 09:37:30 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-11-12 09:37:30 +0530
+
+
+Started GET "/assets/friendships.css?body=1" for 127.0.0.1 at 2016-11-12 09:37:30 +0530
+
+
+Started GET "/assets/slots.css?body=1" for 127.0.0.1 at 2016-11-12 09:37:30 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-11-12 09:37:30 +0530
+
+
+Started GET "/assets/friendships.js?body=1" for 127.0.0.1 at 2016-11-12 09:37:30 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-11-12 09:37:30 +0530
+
+
+Started GET "/assets/friend_requests.js?body=1" for 127.0.0.1 at 2016-11-12 09:37:30 +0530
+
+
+Started GET "/assets/slots.js?body=1" for 127.0.0.1 at 2016-11-12 09:37:30 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-11-12 09:37:30 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-11-12 09:37:30 +0530
+
+
+Started GET "/assets/codezen.png" for 127.0.0.1 at 2016-11-12 09:37:30 +0530
+
+
+Started POST "/users" for 127.0.0.1 at 2016-11-12 09:43:36 +0530
+Processing by UsersController#logout as HTML
+  Parameters: {"authenticity_token"=>"RCxzSCfNtTJ+rNILohphByzQDF8Yku73RuQtqUao0uw="}
+Redirected to http://localhost:3000/users
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-11-12 09:43:36 +0530
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 146ms (Views: 145.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/friend_requests.css?body=1" for 127.0.0.1 at 2016-11-12 09:43:36 +0530
+
+
+Started GET "/assets/slots.css?body=1" for 127.0.0.1 at 2016-11-12 09:43:36 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-11-12 09:43:36 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-11-12 09:43:36 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-11-12 09:43:36 +0530
+
+
+Started GET "/assets/friendships.css?body=1" for 127.0.0.1 at 2016-11-12 09:43:36 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-11-12 09:43:36 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-11-12 09:43:36 +0530
+
+
+Started GET "/assets/friend_requests.js?body=1" for 127.0.0.1 at 2016-11-12 09:43:36 +0530
+
+
+Started GET "/assets/friendships.js?body=1" for 127.0.0.1 at 2016-11-12 09:43:36 +0530
+
+
+Started GET "/assets/slots.js?body=1" for 127.0.0.1 at 2016-11-12 09:43:36 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-11-12 09:43:36 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-11-12 09:43:36 +0530
+
+
+Started GET "/assets/cnjava2.png" for 127.0.0.1 at 2016-11-12 09:43:36 +0530
+
+
+Started GET "/assets/codezen.png" for 127.0.0.1 at 2016-11-12 09:43:36 +0530
